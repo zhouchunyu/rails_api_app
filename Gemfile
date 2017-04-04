@@ -45,3 +45,6 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'jbuilder', '2.6.3'
 
+gem 'kaminari'
+
+gem 'ransack', github: 'activerecord-hackery/ransack'

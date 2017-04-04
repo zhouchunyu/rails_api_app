@@ -1,11 +1,19 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /students
   def index
     @students = Student.all
+    @students = paginate(@students)
+  end
 
-    render json: @students
+  def search
+    @q = Student.ransack(params[:q])
+    @students = @q.result
+    @students = paginate(@students)
+    debugger
+    render :index
   end
 
   # GET /students/1

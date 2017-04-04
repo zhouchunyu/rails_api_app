@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  sex: MyString
+  name: zcy
+  sex: male
 
 two:
-  name: MyString
-  sex: MyString
+  name: hello_again
+  sex: male

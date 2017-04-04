@@ -1,10 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  email: MyString
-  name: MyString
+  email: test-user-00@mail.com
+  name: gg-user
   activated: 2017-04-01 21:50:04
   admin: false
+  authentication_token: mqEcJCsFBWANhS9FxyigyTKvj5bcxoagFpVFiolb8FmtT4Pw1Du9cWT+0WnVwZ9/vDlqthMv56A3txca6HoJ+A==
 
 two:
   email: MyString

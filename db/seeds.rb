@@ -19,3 +19,11 @@ users = User.create([
                             admin: false
                         }
                     ])
+ 100.times do |i|
+   Student.create(
+                      {
+                          name: "test-user-00#{i}",
+                          sex: 'male'
+                      }
+                  )
+ end

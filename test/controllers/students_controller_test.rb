@@ -3,10 +3,21 @@ require 'test_helper'
 class StudentsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @student = students(:one)
+    @user = users(:one)
   end
 
   test "should get index" do
-    get students_url, as: :json
+    get students_url,
+        headers: {'HTTP_AUTHORIZATION' => ActionController::HttpAuthentication::Token.encode_credentials(@user.authentication_token, email: @user.email)},
+        as: :json
+    assert_response :success
+  end
+
+  test "should_search_students" do
+    post search_students_url,
+        headers: {'HTTP_AUTHORIZATION' => ActionController::HttpAuthentication::Token.encode_credentials(@user.authentication_token, email: @user.email)},
+        params: {q: {name_cont: 'zcy'}},
+        as: :json
     assert_response :success
   end
 

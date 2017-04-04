@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   before_create :generate_authentication_token
 
+  # 确保
+  validates :password_confirmation, presence: true
   has_secure_password
 
   def generate_authentication_token
