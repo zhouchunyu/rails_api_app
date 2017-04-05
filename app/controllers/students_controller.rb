@@ -1,6 +1,6 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :update, :destroy]
-  before_action :authenticate_user!
+  # before_action :authenticate_user!
 
   # GET /students
   def index
@@ -12,7 +12,6 @@ class StudentsController < ApplicationController
     @q = Student.ransack(params[:q])
     @students = @q.result
     @students = paginate(@students)
-    debugger
     render :index
   end
 
